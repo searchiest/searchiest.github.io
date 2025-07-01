@@ -1,0 +1,6 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Redirect all traffic from searchiest.com to jemima.ai
+RewriteCond %{HTTP_HOST} ^(www\.)?searchiest\.com$ [NC]
+RewriteRule ^(.*)$ https://jemima.ai/$1 [L,R=301,NE]
